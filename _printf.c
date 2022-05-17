@@ -9,10 +9,6 @@
  *
  * Return: integer
  */
-int main()
-{
-	return 0;
-}
 int _printf(const char *format, ...)
 {
 	const char *format_pointer;
