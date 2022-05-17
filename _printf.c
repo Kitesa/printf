@@ -1,66 +1,53 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
 
-/*
- * _printf - my printf function
- *
- * @format: string argument
- *
- * Return: integer
+/**
+ * _printf - prints formatted data to stdout
+ * @format: string that contains the format to print
+ * Return: number of characters
  */
-int _printf(const char *format, ...)
+int _printf(char *format, ...)
 {
-	const char *format_pointer;
-	unsigned int i;
-	char *s;
-	int char_counter = 0;
-
+	int written = 0, (*structype)(char *, va_list);
+	char q[3];
 	va_list ap;
+
+	if (format == NULL)
+		return (-1);
+	q[2] = '\0';
 	va_start(ap, format);
+	_putchar(-1);
 
-	for(format_pointer = format; *format_pointer != '\0'; format_pointer++)
+	while (format[0])
 	{
-		while(*format_pointer != '%')
+		if (format[0] == '%')
 		{
-			putchar(*format_pointer);
-			format_pointer++;
-			char_counter++;
+			structype = driver(format);
+			if (structype)
+			{
+				q[0] = '%';
+				q[1] = format[1];
+				written += structype(q, ap);
+			}
+			else if (format[1] != '\0')
+			{
+				written += _putchar('%');
+				written += _putchar(format[1]);
+			}
+			else
+			{
+				written += _putchar('%');
+				break;
+			}
+			format += 2;
 		}
-
-		format_pointer++;
-
-		switch(*format_pointer)
+		else
 		{
-			case 'd' :
-				i = va_arg(ap, int);	
-				puts(convert(i, 10));
-				break;
-			case 's' :
-				s = va_arg(ap, char *);
-				puts(s);
-				break;
+			written += _putchar(format[0]);
+			format++;
 		}
 	}
 
-	va_end(ap);
-	return (char_counter);
+	_putchar(-2);
+	return (written);
 }
 
-char *convert(unsigned int num, int base)
-{
-	static char Representation[] = "0123456789ABCDEF";
-	static char buffer[50];
-	char *ptr;
-
-	ptr = &buffer[49];
-	*ptr = '\0';
-
-	do
-	{
-		*--ptr = Representation[num % base];
-		num /= base;
-	}while(num != 0);
-
-	return (ptr);
-}
