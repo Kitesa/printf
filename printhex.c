@@ -3,13 +3,13 @@
 /**
  * printhex - prints a hexadecimal
  * @format: format to print hexadecimal
- * @pa: list that contains the hexadecimal
+ * @ap: list that contains the hexadecimal
  * Return: number.
  */
 
-int printhex(char *format, va_list pa)
+int printhex(char *format, va_list ap)
 {
-	unsigned int num = va_arg(pa, unsigned int);
+	unsigned int num = va_arg(ap, unsigned int);
 	unsigned int num2;
 	int i, i2, copy, contame = 0;
 	char *numhex;
@@ -41,13 +41,13 @@ int printhex(char *format, va_list pa)
 /**
  * printHEX - prints a hexadecimal
  * @format: format to print hexadecimal
- * @pa: va_list that contains the hexadecimal to print
+ * @ap: va_list that contains the hexadecimal to print
  * Return: number of digits printed
  *
  */
-int printHEX(char *format, va_list pa)
+int printHEX(char *format, va_list ap)
 {
-	unsigned int NUM = va_arg(pa, unsigned int);
+	unsigned int NUM = va_arg(ap, unsigned int);
 	unsigned int NUM2;
 	int I, I2, COPY, CONTAME = 0;
 	char *NUMHEX;

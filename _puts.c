@@ -6,7 +6,7 @@
  * Return: count number of strings
  */
 
-int _pts(const char *string)
+int _puts(char *string)
 {
 	int contador = 0;
 	while (*string)

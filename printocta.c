@@ -6,9 +6,9 @@
  * @ap: list that contains the hexadecimal
  * Return: number
  */
-int printocta(char *format, va_list pa)
+int printocta(char *format, va_list ap)
 {
-	unsigned int num = va_arg(pa, unsigned int);
+	unsigned int num = va_arg(ap, unsigned int);
 	unsigned int copia;
 	char *octa;
 	int i, i2 = 0, contame = 0;

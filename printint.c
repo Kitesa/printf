@@ -61,7 +61,7 @@ int integer(int number)
 /**
  * printint - prints a number
  * @format: format to print number
- * ap: va_list with number to print
+ * @ap: va_list with number to print
  * Return: number of characters printed
  */
 
