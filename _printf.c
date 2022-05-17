@@ -9,6 +9,10 @@
  *
  * Return: integer
  */
+int main()
+{
+	return 0;
+}
 int _printf(const char *format, ...)
 {
 	const char *format_pointer;
@@ -16,7 +20,7 @@ int _printf(const char *format, ...)
 	char *s;
 	int char_counter = 0;
 
-	va_list = ap;
+	va_list ap;
 	va_start(ap, format);
 
 	for(format_pointer = format; *format_pointer != '\0'; format_pointer++)
@@ -33,13 +37,7 @@ int _printf(const char *format, ...)
 		switch(*format_pointer)
 		{
 			case 'd' :
-				i = va_arg(ap, int);
-				if(i < 0)
-				{
-					i = -i;
-					putchar('-');
-				}
-				
+				i = va_arg(ap, int);	
 				puts(convert(i, 10));
 				break;
 			case 's' :
