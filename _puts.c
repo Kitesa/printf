@@ -6,7 +6,7 @@
  * @string: input string
  * Return: count of string.
  */
-int _puts(char *string)
+int _puts(const char *string)
 {
 	int contador = 0;
 

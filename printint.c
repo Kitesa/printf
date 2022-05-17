@@ -64,7 +64,7 @@ int integer(int number)
  * @pa: va_list with number to print
  * Return: number of characters printed
  */
-int printint(char *format, va_list pa)
+int printint(const char *format, va_list pa)
 {
   int number = va_arg(pa, int);
   int numero;

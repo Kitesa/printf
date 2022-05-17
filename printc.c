@@ -7,7 +7,7 @@
  *
  * Return: number char for printf
  */
-int printc(char *format, va_list ap)
+int printc(const char *format, va_list ap)
 {
 	(void)format;
 	_putchar(va_arg(ap, int));

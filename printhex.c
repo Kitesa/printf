@@ -5,7 +5,7 @@
  * @pa: list that contains the hexadecimal
  * Return: number.
  */
-int printhex(char *format, va_list pa)
+int printhex(const char *format, va_list pa)
 {
   unsigned int num = va_arg(pa, unsigned int);
   unsigned int num2;
@@ -41,7 +41,7 @@ int printhex(char *format, va_list pa)
  * @pa: va_list that contains the hexadecimal to print
  * Return: number of digits printed
  */
-int printHEX(char *format, va_list pa)
+int printHEX(const char *format, va_list pa)
 {
   unsigned int NUM = va_arg(pa, unsigned int);
   unsigned int NUM2;
