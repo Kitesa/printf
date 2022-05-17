@@ -2,7 +2,6 @@
 
 /**
  * _puts - prints a string
- * new line, to stdout.
  * @string: input string
  * Return: count of string.
  */
