@@ -2,15 +2,14 @@
 
 /**
  * printpercent - prints %
- * @format: strings
- * @ap: va_list
+ * @format: format
+ * @pa: va_list
  * Return: number of characters printed
  */
-
-int printpercent(char *format, va_list ap)
+int printpercent(char *format, va_list pa)
 {
-	(void)format;
-	(void)ap;
-	_putchar('%');
-	return (1);
+  (void)format;
+  (void)pa;
+  _putchar('%');
+  return (1);
 }
