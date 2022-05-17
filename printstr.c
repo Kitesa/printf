@@ -7,9 +7,9 @@
  * Return: number of string to be printed
  */
 
-int printstr(char *format, va_list pa)
+int printstr(char *format, va_list ap)
 {
-	char *string = va_arg(pa, char *);
+	char *string = va_arg(ap, char *);
 	int contador;
 	(void)format;
 

@@ -7,15 +7,15 @@
 
 /**
  * struct structprint - structure 
- * @loc: location and method to change data to char
+ * @q: location and method to change data to char
  * @u: print function for specific type
  *
  * Return:integer
  */
 typedef struct structprint
 {
-	char *loc;
-	int (*u)(const char *format, va_list);
+	char *q;
+	int (*u)(char *format, va_list);
 } structype;
 
 int _printf(char *format, ...);
@@ -25,11 +25,11 @@ int printc(char *format, va_list);
 int printstr(char *format, va_list);
 int (*driver(char *format))(char *format, va_list);
 int _printf(char *format, ...);
-int printint(char *format, va_list pa);
+int printint(char *format, va_list ap);
 int integer(int number);
 int contadordigit(int number);
 int _abs(int number);
-int printpercent(char *format, va_list pa);
+int printpercent(char *format, va_list ap);
 int printhex(char *format, va_list);
 int printHEX(char *format, va_list);
 int printocta(char *format, va_list);
