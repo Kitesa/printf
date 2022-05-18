@@ -21,6 +21,7 @@ structype selector[] = {
 {"%x", printhex},
 {"%X", printHEX},
 {"%o", printocta},
+{"%b", print_b}'
 {NULL, NULL}
 };
 
